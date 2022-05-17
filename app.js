@@ -50,7 +50,7 @@ toggleButton.addEventListener('click', () => {
        setTimeout(showSlides, 2000); //Change image every 2 seconds
   }    
 
-  <script>
+  
     function openMenu(evt, types) {
       var i, choices, category;
       choices = document.getElementsByClassName("choices");
@@ -63,10 +63,11 @@ toggleButton.addEventListener('click', () => {
       category[i].className = category[i].className.replace("active", "");
     } 
 
-    document.getElementById 
-    }
+    document.getElementById(types).style.display = "block";
+    evt.currentTarget.className += "active";    
+  }
 
 
 
 
-  </script>
+  
