@@ -26,46 +26,67 @@ toggleButton.addEventListener('click', () => {
 
   //window.onload = changeImg; 
 
-  var slideIndex = 0;
-  showSlides();
+ // var slideIndex = 0;
+ // showSlides();
 
-  function showSlides() {
-       var i;
-       var slides =
-       document.getElementsByClassName("mySlides");
-       var dots = document.getElementsByClassName("dot");
-       for (i = 0; i < slides.length; i++)
-       {
-           slides[i].style.display = "none";
+  //function showSlides() {
+      // var i;
+       //var slides =
+       //document.getElementsByClassName("mySlides");
+       //var dots = document.getElementsByClassName("dot");
+       //for (i = 0; i < slides.length; i++)
+       //{
+         //  slides[i].style.display = "none"; 
 
-       }
-       slideIndex++;
-       if (slideIndex > slides.length)
-       {slideIndex = 1}
-       for (i = 0; i < dots.length; i++) {
-           dots[i].className = dots[i].className.replace(" active", "");
-       }
-       slides[slideIndex-1].style.display = "block";
-       dots[slideIndex-1].className += "active";
-       setTimeout(showSlides, 2000); //Change image every 2 seconds
-  }    
+       //}
+       //slideIndex++;
+       //if (slideIndex > slides.length)
+       //{slideIndex = 1}
+       //for (i = 0; i < dots.length; i++) {
+         //  dots[i].className = dots[i].className.replace(" active", "");
+       //}
+       //slides[slideIndex-1].style.display = "block";
+       //dots[slideIndex-1].className += " active"; 
+       //setTimeout(showSlides, 2000); //Change image every 2 seconds
+  //}    
 
   
-    function openMenu(evt, types) {
-      var i, choices, category;
-      choices = document.getElementsByClassName("choices");
-      for (i = 0; i < choices.length; i++) {
-        choices[i].style.display = "none";
-    }
+    const breakfastButton = document.getElementById('breakfast-btn');
+    const breakfastContainer = document.getElementById('Breakfast-container');
+    const lunchButton = document.getElementById('lunch-btn');
+    const lunchContainer = document.getElementById('Lunch-container');
+    const dinnerButton = document.getElementById('dinner-btn');
+    const dinnerContainer = document.getElementById('Dinner-container');                                           
+    const dessertButton = document.getElementById('dessert-btn'); 
+    const dessertContainer = document.getElementById('Dessert-container');
 
-    category = document.getElementsByClassName("category"); 
-    for (i = 0; i < category.length; i++) {
-      category[i].className = category[i].className.replace("active", "");
-    } 
+    breakfastButton.addEventListener('click', () => {
+      breakfastContainer.style.display = 'block';
+      lunchContainer.style.display = 'none'; 
+      dinnerContainer.style.display = 'none'; 
+      dessertContainer.style.display = 'none';
+    });
 
-    document.getElementById(types).style.display = "block";
-    evt.currentTarget.className += "active";    
-  }
+    lunchButton.addEventListener('click', () => {
+      lunchContainer.style.display = 'block';
+      breakfastContainer.style.display = 'none';
+      dinnerContainer.style.display = 'none';
+      dessertContainer.style.display = 'none';
+ });
+
+    dinnerButton.addEventListener('click', () =>{
+      dinnerContainer.style.display = 'block';
+      breakfastContainer.style.display = 'none';
+      lunchContainer.style.display = 'none';
+      dessertContainer.style.display = 'none';
+    });    
+
+    dessertButton.addEventListener('click', () => {
+      dessertContainer.style.display = 'block';
+      breakfastContainer.style.display = 'none';
+      lunchContainer.style.display = 'none';
+      dinnerContainer.style.display = 'none';
+    }); 
 
 
 
